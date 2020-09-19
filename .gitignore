@@ -427,3 +427,6 @@ MigrationBackup/
 **/App_Data/Models/ood.flag
 
 # End of https://www.toptal.com/developers/gitignore/api/git,windows,umbraco,visualstudio
+
+# ignore Web for now
+/SkriftLandingPage.Web/
