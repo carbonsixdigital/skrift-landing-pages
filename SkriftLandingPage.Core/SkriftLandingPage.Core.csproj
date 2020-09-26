@@ -8,4 +8,12 @@
     <Folder Include="Models\UmbracoModels\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Our.Umbraco.Community.Contentment.Core" Version="1.0.1" />
+    <PackageReference Include="UmbracoCms.Core" Version="8.7.0" />
+    <PackageReference Include="UmbracoCms.Web" Version="8.7.0" />
+    <PackageReference Include="UmbracoForms.Core" Version="8.5.3" />
+  </ItemGroup>
+
 </Project>
