@@ -19,64 +19,57 @@ using Umbraco.ModelsBuilder.Embedded;
 
 namespace Umbraco.Web.PublishedModels
 {
-	/// <summary>Quote block</summary>
-	[PublishedModel("quoteBlock")]
-	public partial class QuoteBlock : PublishedElementModel
+	/// <summary>Rich content block</summary>
+	[PublishedModel("richContentBlock")]
+	public partial class RichContentBlock : PublishedElementModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.7.0")]
-		public new const string ModelTypeAlias = "quoteBlock";
+		public new const string ModelTypeAlias = "richContentBlock";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.7.0")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.7.0")]
 		public new static IPublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.7.0")]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<QuoteBlock, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<RichContentBlock, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public QuoteBlock(IPublishedElement content)
+		public RichContentBlock(IPublishedElement content)
 			: base(content)
 		{ }
 
 		// properties
 
 		///<summary>
-		/// Logo: Quotee's company logo for example
+		/// Column one
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.7.0")]
-		[ImplementPropertyType("logo")]
-		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent Logo => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("logo");
+		[ImplementPropertyType("columnOne")]
+		public global::System.Web.IHtmlString ColumnOne => this.Value<global::System.Web.IHtmlString>("columnOne");
 
 		///<summary>
-		/// Quote
+		/// Column two
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.7.0")]
-		[ImplementPropertyType("quote")]
-		public string Quote => this.Value<string>("quote");
+		[ImplementPropertyType("columnTwo")]
+		public global::System.Web.IHtmlString ColumnTwo => this.Value<global::System.Web.IHtmlString>("columnTwo");
 
 		///<summary>
-		/// Quotee Image
+		/// Tag line
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.7.0")]
-		[ImplementPropertyType("quoteeImage")]
-		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent QuoteeImage => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("quoteeImage");
+		[ImplementPropertyType("tagLine")]
+		public string TagLine => this.Value<string>("tagLine");
 
 		///<summary>
-		/// Quotee Job title / company
+		/// Title
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.7.0")]
-		[ImplementPropertyType("quoteeJobTitleCompany")]
-		public string QuoteeJobTitleCompany => this.Value<string>("quoteeJobTitleCompany");
-
-		///<summary>
-		/// Quotee name
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.7.0")]
-		[ImplementPropertyType("quoteeName")]
-		public string QuoteeName => this.Value<string>("quoteeName");
+		[ImplementPropertyType("title")]
+		public string Title => this.Value<string>("title");
 	}
 }
