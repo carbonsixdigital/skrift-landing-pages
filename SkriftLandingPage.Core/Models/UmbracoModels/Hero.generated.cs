@@ -21,7 +21,7 @@ namespace Umbraco.Web.PublishedModels
 {
 	// Mixin Content Type with alias "hero"
 	/// <summary>Hero</summary>
-	public partial interface IHero : IPublishedContent
+	public partial interface IHero : IPublishedElement
 	{
 		/// <summary>Hero area</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.7.0")]
@@ -30,7 +30,7 @@ namespace Umbraco.Web.PublishedModels
 
 	/// <summary>Hero</summary>
 	[PublishedModel("hero")]
-	public partial class Hero : PublishedContentModel, IHero
+	public partial class Hero : PublishedElementModel, IHero
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -47,7 +47,7 @@ namespace Umbraco.Web.PublishedModels
 #pragma warning restore 0109
 
 		// ctor
-		public Hero(IPublishedContent content)
+		public Hero(IPublishedElement content)
 			: base(content)
 		{ }
 
