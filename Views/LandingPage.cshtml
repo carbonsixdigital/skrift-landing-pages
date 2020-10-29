@@ -1,0 +1,5 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<LandingPage>
+
+@Html.GetBlockListHtml(Model, LandingPage.GetModelPropertyType(x => x.HeroArea).Alias, "LandingPage")
+
+@Html.GetBlockListHtml(Model, LandingPage.GetModelPropertyType(x => x.BodyContent).Alias, "LandingPage")
