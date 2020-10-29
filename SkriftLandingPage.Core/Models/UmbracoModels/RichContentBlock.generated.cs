@@ -19,71 +19,57 @@ using Umbraco.ModelsBuilder.Embedded;
 
 namespace Umbraco.Web.PublishedModels
 {
-	/// <summary>Image</summary>
-	[PublishedModel("Image")]
-	public partial class Image : PublishedContentModel
+	/// <summary>Rich content block</summary>
+	[PublishedModel("richContentBlock")]
+	public partial class RichContentBlock : PublishedElementModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.7.0")]
-		public new const string ModelTypeAlias = "Image";
+		public new const string ModelTypeAlias = "richContentBlock";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.7.0")]
-		public new const PublishedItemType ModelItemType = PublishedItemType.Media;
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.7.0")]
 		public new static IPublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.7.0")]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Image, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<RichContentBlock, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public Image(IPublishedContent content)
+		public RichContentBlock(IPublishedElement content)
 			: base(content)
 		{ }
 
 		// properties
 
 		///<summary>
-		/// Alt text
+		/// Column one
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.7.0")]
-		[ImplementPropertyType("altText")]
-		public string AltText => this.Value<string>("altText");
+		[ImplementPropertyType("columnOne")]
+		public global::System.Web.IHtmlString ColumnOne => this.Value<global::System.Web.IHtmlString>("columnOne");
 
 		///<summary>
-		/// Size: in bytes
+		/// Column two
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.7.0")]
-		[ImplementPropertyType("umbracoBytes")]
-		public long UmbracoBytes => this.Value<long>("umbracoBytes");
+		[ImplementPropertyType("columnTwo")]
+		public global::System.Web.IHtmlString ColumnTwo => this.Value<global::System.Web.IHtmlString>("columnTwo");
 
 		///<summary>
-		/// Type
+		/// Tag line
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.7.0")]
-		[ImplementPropertyType("umbracoExtension")]
-		public string UmbracoExtension => this.Value<string>("umbracoExtension");
+		[ImplementPropertyType("tagLine")]
+		public string TagLine => this.Value<string>("tagLine");
 
 		///<summary>
-		/// Upload image
+		/// Title
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.7.0")]
-		[ImplementPropertyType("umbracoFile")]
-		public global::Umbraco.Core.PropertyEditors.ValueConverters.ImageCropperValue UmbracoFile => this.Value<global::Umbraco.Core.PropertyEditors.ValueConverters.ImageCropperValue>("umbracoFile");
-
-		///<summary>
-		/// Height: in pixels
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.7.0")]
-		[ImplementPropertyType("umbracoHeight")]
-		public int UmbracoHeight => this.Value<int>("umbracoHeight");
-
-		///<summary>
-		/// Width: in pixels
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.7.0")]
-		[ImplementPropertyType("umbracoWidth")]
-		public int UmbracoWidth => this.Value<int>("umbracoWidth");
+		[ImplementPropertyType("title")]
+		public string Title => this.Value<string>("title");
 	}
 }

@@ -429,4 +429,6 @@ MigrationBackup/
 # End of https://www.toptal.com/developers/gitignore/api/git,windows,umbraco,visualstudio
 
 # ignore Web for now
-/SkriftLandingPage.Web/
+**/SkriftLandingPage.Web/data
+
+***/SkriftLandingPage.Web/config/UmbracoDeploy*.config

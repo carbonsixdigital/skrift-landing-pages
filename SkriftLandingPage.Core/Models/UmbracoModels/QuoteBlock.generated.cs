@@ -19,71 +19,64 @@ using Umbraco.ModelsBuilder.Embedded;
 
 namespace Umbraco.Web.PublishedModels
 {
-	/// <summary>Image</summary>
-	[PublishedModel("Image")]
-	public partial class Image : PublishedContentModel
+	/// <summary>Quote block</summary>
+	[PublishedModel("quoteBlock")]
+	public partial class QuoteBlock : PublishedElementModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.7.0")]
-		public new const string ModelTypeAlias = "Image";
+		public new const string ModelTypeAlias = "quoteBlock";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.7.0")]
-		public new const PublishedItemType ModelItemType = PublishedItemType.Media;
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.7.0")]
 		public new static IPublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.7.0")]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Image, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<QuoteBlock, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public Image(IPublishedContent content)
+		public QuoteBlock(IPublishedElement content)
 			: base(content)
 		{ }
 
 		// properties
 
 		///<summary>
-		/// Alt text
+		/// Logo: Quotee's company logo for example
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.7.0")]
-		[ImplementPropertyType("altText")]
-		public string AltText => this.Value<string>("altText");
+		[ImplementPropertyType("logo")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent Logo => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("logo");
 
 		///<summary>
-		/// Size: in bytes
+		/// Quote
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.7.0")]
-		[ImplementPropertyType("umbracoBytes")]
-		public long UmbracoBytes => this.Value<long>("umbracoBytes");
+		[ImplementPropertyType("quote")]
+		public string Quote => this.Value<string>("quote");
 
 		///<summary>
-		/// Type
+		/// Quotee Image
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.7.0")]
-		[ImplementPropertyType("umbracoExtension")]
-		public string UmbracoExtension => this.Value<string>("umbracoExtension");
+		[ImplementPropertyType("quoteeImage")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent QuoteeImage => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("quoteeImage");
 
 		///<summary>
-		/// Upload image
+		/// Quotee Job title / company
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.7.0")]
-		[ImplementPropertyType("umbracoFile")]
-		public global::Umbraco.Core.PropertyEditors.ValueConverters.ImageCropperValue UmbracoFile => this.Value<global::Umbraco.Core.PropertyEditors.ValueConverters.ImageCropperValue>("umbracoFile");
+		[ImplementPropertyType("quoteeJobTitleCompany")]
+		public string QuoteeJobTitleCompany => this.Value<string>("quoteeJobTitleCompany");
 
 		///<summary>
-		/// Height: in pixels
+		/// Quotee name
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.7.0")]
-		[ImplementPropertyType("umbracoHeight")]
-		public int UmbracoHeight => this.Value<int>("umbracoHeight");
-
-		///<summary>
-		/// Width: in pixels
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.7.0")]
-		[ImplementPropertyType("umbracoWidth")]
-		public int UmbracoWidth => this.Value<int>("umbracoWidth");
+		[ImplementPropertyType("quoteeName")]
+		public string QuoteeName => this.Value<string>("quoteeName");
 	}
 }
