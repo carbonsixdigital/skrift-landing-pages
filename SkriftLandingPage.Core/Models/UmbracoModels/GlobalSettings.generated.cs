@@ -19,57 +19,71 @@ using Umbraco.ModelsBuilder.Embedded;
 
 namespace Umbraco.Web.PublishedModels
 {
-	/// <summary>Landing Page</summary>
-	[PublishedModel("landingPage")]
-	public partial class LandingPage : PublishedContentModel, IHero, IMetaData
+	/// <summary>Global settings</summary>
+	[PublishedModel("globalSettings")]
+	public partial class GlobalSettings : PublishedContentModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.7.0")]
-		public new const string ModelTypeAlias = "landingPage";
+		public new const string ModelTypeAlias = "globalSettings";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.7.0")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.7.0")]
 		public new static IPublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.7.0")]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<LandingPage, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<GlobalSettings, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public LandingPage(IPublishedContent content)
+		public GlobalSettings(IPublishedContent content)
 			: base(content)
 		{ }
 
 		// properties
 
 		///<summary>
-		/// Body Content
+		/// Dribbble
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.7.0")]
-		[ImplementPropertyType("bodyContent")]
-		public global::Umbraco.Core.Models.Blocks.BlockListModel BodyContent => this.Value<global::Umbraco.Core.Models.Blocks.BlockListModel>("bodyContent");
+		[ImplementPropertyType("dribbble")]
+		public string Dribbble => this.Value<string>("dribbble");
 
 		///<summary>
-		/// Hero area
+		/// Facebook
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.7.0")]
-		[ImplementPropertyType("heroArea")]
-		public global::Umbraco.Core.Models.Blocks.BlockListModel HeroArea => global::Umbraco.Web.PublishedModels.Hero.GetHeroArea(this);
+		[ImplementPropertyType("facebook")]
+		public string Facebook => this.Value<string>("facebook");
 
 		///<summary>
-		/// Meta description
+		/// GitHub
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.7.0")]
-		[ImplementPropertyType("metaDescription")]
-		public string MetaDescription => global::Umbraco.Web.PublishedModels.MetaData.GetMetaDescription(this);
+		[ImplementPropertyType("gitHub")]
+		public string GitHub => this.Value<string>("gitHub");
 
 		///<summary>
-		/// Meta title
+		/// Google Tag Manager ID: GTM-XXXX
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.7.0")]
-		[ImplementPropertyType("metaTitle")]
-		public string MetaTitle => global::Umbraco.Web.PublishedModels.MetaData.GetMetaTitle(this);
+		[ImplementPropertyType("googleTagManagerId")]
+		public string GoogleTagManagerId => this.Value<string>("googleTagManagerId");
+
+		///<summary>
+		/// Instagram
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.7.0")]
+		[ImplementPropertyType("instagram")]
+		public string Instagram => this.Value<string>("instagram");
+
+		///<summary>
+		/// Twitter
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.7.0")]
+		[ImplementPropertyType("twitter")]
+		public string Twitter => this.Value<string>("twitter");
 	}
 }
